@@ -31,7 +31,6 @@
 #ifndef _WORDEXP_H_
 #define	_WORDEXP_H_
 
-#include <sys/cdefs.h>
 #include <sys/types.h>
 #include <stdlib.h>
 
@@ -65,9 +64,15 @@ typedef struct {
 #endif
 #define	WRDE_SYNTAX	6		/* shell syntax error */
 
-__BEGIN_DECLS
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
 int	wordexp(const char * __restrict, wordexp_t * __restrict, int);
 void	wordfree(wordexp_t *);
-__END_DECLS
+
+#ifdef	__cplusplus
+}
+#endif
 
 #endif /* !_WORDEXP_H_ */
